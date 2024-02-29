@@ -1,0 +1,28 @@
+{
+  "name": "http-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prestart": "npm install",
+    "start": "forever server.js",
+    "watch": "forever -w server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/KhazanovArtem/http-backend.git"
+  },
+  "author": "LowShilla",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KhazanovArtem/http-backend/issues"
+  },
+  "homepage": "https://github.com/KhazanovArtem/http-backend#readme",
+  "dependencies": {
+    "forever": "^4.0.3",
+    "koa": "^2.15.0",
+    "koa-body": "^6.0.1",
+    "koa-cors": "^0.0.16",
+    "path": "^0.12.7"
+  }
+}
