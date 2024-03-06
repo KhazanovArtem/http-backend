@@ -69,6 +69,17 @@ app.use(async ctx => {
                 ctx.response.status = 404;
             }
             return;
+
+        case 'updateById': 
+            console.log(ctx.request.body);
+            const {id: Id} = ctx.request.query;
+            const ticketToEdit = tickets.find(ticket => ticket.id === parseInt(Id));
+            const ticketData = ctx.request.body;
+            ticketToEdit.status = ticketData.status;
+            console.log(ticketToEdit);
+            ctx.response.status = 201;
+            return;
+
         case 'createTicket':
             if (ctx.request.method !== 'POST') {
                 ctx.response.status = 404;
@@ -90,8 +101,6 @@ app.use(async ctx => {
                     })
             };
                 tickets.push(ticket);
-                console.log(ticket);
-                console.log(tickets);
             ctx.response.status = 201;
             ctx.response.body = tickets;
             return;
